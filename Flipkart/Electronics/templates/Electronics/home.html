@@ -1,0 +1,11 @@
+<h1> Welcome to Electronics Store</h1>
+
+{% for pro in prod %}
+    <div class="product">
+        <h2>{{ pro.name }}</h2>
+        <p>Price: {{ pro.price }}</p>
+        <p>Description: {{ pro.description }}</p>
+        <p>Stock: {{ pro.stock }}</p>
+    </div>
+{% endfor %}
+
