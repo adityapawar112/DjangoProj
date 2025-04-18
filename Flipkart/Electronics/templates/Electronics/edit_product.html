@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Product</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #131921;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      z-index: 1000;
+    }
+    .navbar-left,
+    .navbar-menu,
+    .navbar-right {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-left .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+    .navbar-left .location {
+      font-size: 0.9rem;
+    }
+    .navbar-menu a,
+    .navbar-right a {
+      margin: 0 10px;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    /* Main Container */
+    .page-container {
+      padding-top: 70px; /* offset for fixed navbar */
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Form Container (matching homepage theme) */
+    .form-container {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+      box-sizing: border-box;
+    }
+    .form-container h2 {
+      margin: 0 0 15px;
+      font-size: 1.3rem;
+      color: #111;
+    }
+    /* Wrap around Django form paragraphs */
+    .form-container form > div {
+      margin-bottom: 20px;
+    }
+    /* Style each paragraph from fm.as_p */
+    .form-container p {
+      margin: 0 0 8px;
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    /* Inputs, selects, and textareas */
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="number"],
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+
+    /* Save / Back Buttons */
+    .edit-button {
+      display: inline-block;
+      background-color: #FFD814;   /* Amazon yellow accent */
+      border: 1px solid #FCD200;
+      color: #111;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+    }
+    .edit-button:hover {
+      background-color: #f7c948;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo">Flipkart.in</div>
+        <div class="location">Delivering to Pune</div>
+      </div>
+      <nav class="navbar-menu">
+        <a href="#">Fresh</a>
+        <a href="#">Today's Deals</a>
+        <a href="#">Register Product</a>
+        <a href="#">Electronics</a>
+      </nav>
+      <div class="navbar-right">
+        <a href="#">Sign In</a>
+        <a href="#">Orders</a>
+        <a href="#">Cart</a>
+      </div>
+    </header>
+
+    <!-- Edit Product Form -->
+    <div class="form-container">
+      <h2>Edit Product</h2>
+      <form method="post">
+        {% csrf_token %}
+        <div>
+          {{ form.as_p }}
+        </div>
+        <button type="submit" class="edit-button">Save Changes</button>
+        <a href="{% url 'home' %}" class="edit-button">Back to Home</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

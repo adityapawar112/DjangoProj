@@ -96,29 +96,34 @@
       color: #007600;
       margin-bottom: 10px;
     }
-    .add-to-cart {
-      background-color: #FFD814;
-      border: 1px solid #FCD200;
-      padding: 10px;
-      border-radius: 4px;
+        /* Edit Button (styled like the Add to Cart button) */
+    .edit-button {
+      background-color: #FFD814;       /* Amazon yellow accent color */ 
+      border: 1px solid #FCD200;       /* Slightly darker yellow border */ 
+      color: #111;                     /* Dark text for contrast */ 
       font-weight: bold;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    .add-to-cart:hover {
+
+    /* Edit Button */
+    .edit-button {
+      background-color: #FFD814;
+      border: 1px solid #FCD200;
+      color: #111;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .edit-button:hover {
       background-color: #f7c948;
     }
-  /* Form Container */
-  .form-container {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 30px 0;
-    max-width: 600px;
-    width: 100%;
-    box-sizing: border-box;
-  }
 
   /* Wrap around Django form paragraphs */
   .form-container form > div {
@@ -211,9 +216,13 @@
             {% endif %}
           </div>
           
-          <!-- Add to Cart button -->
-          <a herf = "{% url 'edit_product' pro.id %}"> Edit </a>
+          <!-- Edit button -->
+          <a href="{% url 'edit_product' pro.id %}" class="edit-button">
+            Edit
+          </a>
+          
         </div>
+        
       {% endfor %}
     </main>
      <!-- Simplistic Themed Form -->

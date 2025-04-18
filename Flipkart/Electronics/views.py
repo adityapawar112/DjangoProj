@@ -17,3 +17,13 @@ def home(request):
         fm = ProductForm()
     return render(request, 'Electronics/home.html', {'prod':prod, 'fm':fm}) # Render the home.html template with the products context
 
+def edit_product(request, product_id):
+    product = Product.objects.get(id=product_id)  # Fetch the product by ID
+    if request.method == 'POST':
+        form = ProductForm(request.POST, instance=product)  # Bind the form with POST data and the product instance
+        if form.is_valid():  # Validate the form data
+            form.save()  # Save the updated product
+            return redirect('home') 
+    else:
+        form = ProductForm(instance=product)  # Redirect to the home page after saving
+    return render(request, 'Electronics/edit_product.html', {'form':form})  # Render the edit_product.html template with the form context
