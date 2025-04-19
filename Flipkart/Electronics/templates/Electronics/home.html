@@ -304,7 +304,14 @@
         <!-- Product name as title -->
         <h3 class="product-name">{{ pro.name }}</h3>
 
-        <!-- Product description (replacing image) -->
+        <!-- Product image  -->
+         {% if pro.image %}
+        <img src="{{ pro.image.url }}" alt="{{ pro.name }}" style="width: 100%; height: auto; border-radius: 4px;">
+        {% else %}
+        <p>No image available</p>
+        {% endif %}
+
+        <!-- Product description  -->
         <div class="product-description">{{ pro.description }}</div>
 
         <!-- Product price -->
@@ -335,7 +342,7 @@
     <section class="register-section">
       <div class="form-container register-card">
         <h2>Register Product</h2>
-        <form method="post" action="#">
+        <form method="post" action="#", enctype="multipart/form-data">
           {% csrf_token %}
           <div>
             {{ fm.as_p }}
