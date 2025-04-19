@@ -27,3 +27,10 @@ def edit_product(request, product_id):
     else:
         form = ProductForm(instance=product)  # Redirect to the home page after saving
     return render(request, 'Electronics/edit_product.html', {'form':form})  # Render the edit_product.html template with the form context
+
+def delete_product(request, product_id):
+    product = Product.objects.get(id=product_id)  # Fetch the product by ID
+    if request.method == 'POST':
+        product.delete()  # Delete the product
+        return redirect('home')  # Redirect to the home page after deleting
+    return render(request, 'Electronics/delete_product.html', {'product':product})  # Render the delete_product.html template with the product context
