@@ -4,10 +4,10 @@
   {% load static %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Electronics Products</title>
-  <link rel="stylesheet" href="{% static 'Electronics/styles.css' %}">
-  <link rel="stylesheet" href="{% static 'Electronics/card.css' %}"> <!-- Include card.css -->
-  <link rel="stylesheet" href="{% static 'Electronics/forms.css' %}">
+  <title>Clothing Products</title>
+  <link rel="stylesheet" href="{% static 'Clothing/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'Clothing/card.css' %}">
+  <link rel="stylesheet" href="{% static 'Clothing/forms.css' %}">
 </head>
 <body>
   <div class="page-container">
@@ -21,7 +21,7 @@
         <a href="#">Fresh</a>
         <a href="#">Today's Deals</a>
         <a href="#">Register Product</a>
-        <a href="{% url 'Clothing:home' %}">Clothing</a>
+        <a href="{% url 'Electronics:home' %}">Electronics</a>
       </nav>
       <div class="navbar-right">
         <a href="#">Sign In</a>
@@ -29,8 +29,6 @@
         <a href="#">Cart</a>
       </div>
     </header>
-
-    
 
     <!-- Divider -->
     <div class="divider"></div>
@@ -54,34 +52,34 @@
           Out of Stock
           {% endif %}
         </div>
-        <a href="{% url 'Electronics:edit_product' pro.id %}" class="edit-button">Edit</a>
-        <a href="{% url 'Electronics:delete_product' pro.id %}" class="edit-button delete-button">Delete</a>
+        <a href="{% url 'Clothing:edit_product' pro.id %}" class="edit-button">Edit</a>
+        <a href="{% url 'Clothing:delete_product' pro.id %}" class="edit-button delete-button">Delete</a>
       </div>
       {% endfor %}
     </main>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Product Registration Section -->
+    <section class="form-card">
+      <h2>Register Product</h2>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+          {{ fm.as_p }}
+        </div>
+        <button type="submit" class="edit-button">Register</button>
+      </form>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2023 Flipkart Clothing. All rights reserved.</p>
+    </footer>
   </div>
-
-   <!-- Divider -->
-   <div class="divider"></div>
-   
-  <!-- Product Registration Section -->
-  <section class="form-card">
-    <h2>Register Product</h2>
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div>
-        {{ fm.as_p }}
-      </div>
-      <button type="submit" class="edit-button">Register</button>
-    </form>
-  </section>
-
-  <!-- Divider -->
-  <div class="divider"></div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2023 Flipkart Electronics. All rights reserved.</p>
-  </footer>
 </body>
 </html>

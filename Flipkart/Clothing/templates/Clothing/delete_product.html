@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Delete Product</title>
-  <link rel="stylesheet" href="{% static 'Electronics/styles.css' %}">
-  <link rel="stylesheet" href="{% static 'Electronics/forms.css' %}">
+  <link rel="stylesheet" href="{% static 'Clothing/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'Clothing/forms.css' %}">
 </head>
 <body>
   <div class="page-container">
@@ -20,7 +20,7 @@
         <a href="#">Fresh</a>
         <a href="#">Today's Deals</a>
         <a href="#">Register Product</a>
-        <a href="{% url 'Clothing:home' %}">Clothing</a>
+        <a href="{% url 'Electronics:home' %}">Electronics</a>
       </nav>
       <div class="navbar-right">
         <a href="#">Sign In</a>
@@ -29,8 +29,8 @@
       </div>
     </header>
 
-       <!-- Divider -->
-   <div class="divider"></div>
+    <!-- Divider -->
+    <div class="divider"></div>
 
     <!-- Delete Product Confirmation -->
     <div class="form-card">
@@ -44,7 +44,7 @@
       <form method="post">
         {% csrf_token %}
         <button type="submit" class="edit-button delete-button">Yes, Delete</button>
-        <a href="{% url 'Electronics:home' %}" class="edit-button">Cancel</a>
+        <a href="{% url 'Clothing:home' %}" class="edit-button">Cancel</a>
       </form>
     </div>
 
@@ -53,7 +53,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2023 Flipkart Electronics. All rights reserved.</p>
+      <p>&copy; 2023 Flipkart Clothing. All rights reserved.</p>
     </footer>
   </div>
 </body>

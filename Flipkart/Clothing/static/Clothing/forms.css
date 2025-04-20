@@ -1,0 +1,54 @@
+/* Form Card */
+.form-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Form Card Title */
+.form-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Product Info Section */
+.product-info {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.product-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+  word-wrap: break-word; /* Prevent long text from breaking layout */
+}
+
+/* Form Layout */
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Form Buttons */
+.form-card button {
+  background-color: #ff6f61; /* Modern pastel red */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-card button:hover {
+  background-color: #e65a50; /* Slightly darker red */
+}

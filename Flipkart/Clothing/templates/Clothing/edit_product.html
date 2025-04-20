@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   {% load static %}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Edit Product</title>
-  <link rel="stylesheet" href="{% static 'Electronics/styles.css' %}">
-  <link rel="stylesheet" href="{% static 'Electronics/forms.css' %}">
+  <link rel="stylesheet" href="{% static 'Clothing/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'Clothing/forms.css' %}">
 </head>
 <body>
   <div class="page-container">
@@ -20,7 +20,7 @@
         <a href="#">Fresh</a>
         <a href="#">Today's Deals</a>
         <a href="#">Register Product</a>
-        <a href="{% url 'Clothing:home' %}">Clothing</a> <!-- Updated Clothing link -->
+        <a href="{% url 'Electronics:home' %}">Electronics</a>
       </nav>
       <div class="navbar-right">
         <a href="#">Sign In</a>
@@ -29,8 +29,8 @@
       </div>
     </header>
 
-       <!-- Divider -->
-   <div class="divider"></div>
+    <!-- Divider -->
+    <div class="divider"></div>
 
     <!-- Edit Product Form -->
     <div class="form-card">
@@ -41,13 +41,13 @@
           {{ form.as_p }}
         </div>
         <button type="submit" class="edit-button">Save Changes</button>
-        <a href="{% url 'Electronics:home' %}" class="edit-button">Back to Home</a> <!-- Updated Back to Home link -->
+        <a href="{% url 'Clothing:home' %}" class="edit-button">Back to Home</a>
       </form>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2023 Flipkart Electronics. All rights reserved.</p>
+      <p>&copy; 2023 Flipkart Clothing. All rights reserved.</p>
     </footer>
   </div>
 </body>

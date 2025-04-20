@@ -16,15 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Electronics import views  # Import views from the Electronics app
+from Electronics import views as electronics_views  # Import views from the Electronics app
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),  # Add this line to include the home view
-    path('electronics/', include('Electronics.urls')),
-    
+    path('', electronics_views.home, name='home'),  # Register the Electronics home view as the root URL
+    path('electronics/', include('Electronics.urls')),  # Include Electronics app URLs
+    path('clothing/', include('Clothing.urls')),  # Include Clothing app URLs
 ]
 
 if settings.DEBUG:
