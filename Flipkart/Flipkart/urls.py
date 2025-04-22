@@ -25,6 +25,7 @@ urlpatterns = [
     path('', electronics_views.home, name='home'),  # Register the Electronics home view as the root URL
     path('electronics/', include('Electronics.urls')),  # Include Electronics app URLs
     path('clothing/', include('Clothing.urls')),  # Include Clothing app URLs
+    path('registration/', include('accounts.urls')),  # Include accounts app URLs
 ]
 
 if settings.DEBUG:

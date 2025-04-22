@@ -21,10 +21,11 @@
         <a href="#">Fresh</a>
         <a href="#">Today's Deals</a>
         <a href="#">Register Product</a>
+        <a href="{% url 'Clothing:home' %}">Clothing</a>
         <a href="{% url 'Electronics:home' %}">Electronics</a>
       </nav>
       <div class="navbar-right">
-        <a href="#">Sign In</a>
+        <a href="{% url 'logout' %}">Log out</a>
         <a href="#">Orders</a>
         <a href="#">Cart</a>
       </div>

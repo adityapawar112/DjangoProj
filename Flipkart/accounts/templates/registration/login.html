@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'Electronics/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Electronics/forms.css' %}">
+</head>
+<body>
+    <div class="page-container">
+        
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Login Form -->
+        <div class="form-card">
+            <h2 class="form-title">Log in</h2>
+            <form method="post" class="form-container">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="edit-button">Login</button>
+            </form>
+            <p class="form-footer">
+                Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.
+            </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2023 Flipkart Electronics. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

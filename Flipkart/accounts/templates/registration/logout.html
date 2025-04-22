@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="{% static 'Electronics/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Electronics/forms.css' %}">
+</head>
+<body>
+    <div class="page-container">
+        
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Logout Message -->
+        <div class="form-card">
+            <h2 class="form-title">Logged Out</h2>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="edit-button">Log out</button>
+            </form>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2023 Flipkart Electronics. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
